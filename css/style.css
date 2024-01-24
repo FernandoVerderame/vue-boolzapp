@@ -59,3 +59,25 @@
     border: 2px dashed black;
     background-color: dodgerblue;
 }
+
+
+/* ! Main content */
+/* Navbar del contatto */
+.contact-navbar {
+    height: 90px;
+    border: 2px dashed black;
+    flex-shrink: 0;
+}
+
+/* Chat del contatto */
+.contact-chat {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* Barra del messaggio */ 
+.message-bar {
+    height: 90px;
+    border: 2px dashed black;
+    flex-shrink: 0;
+}
