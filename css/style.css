@@ -153,12 +153,20 @@ ul {
 .contact-chat {
     flex-grow: 1;
     overflow: auto;
-    border: 2px dashed black;
+    background-image: url(/img/mine.jpg);
 }
 
 /* Barra del messaggio */ 
 .message-bar {
     height: 90px;
-    border: 2px dashed black;
     flex-shrink: 0;
+}
+
+.message-bar a {
+    color: gray;
+}
+
+.message-bar input {
+    height: 65px;
+    margin: 0 30px;
 }
