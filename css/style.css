@@ -30,6 +30,7 @@ ul {
 /* ! Sidebar */
 .sidebar {
     width: 35%;
+    border-right: 2px solid #7777F1;
     display: flex;
     flex-direction: column;
 }
@@ -114,7 +115,7 @@ ul {
 }
 
 .contact-info h3 {
-    font-size: 22px;
+    font-size: 20px;
     margin-left: 20px;
 }
 
@@ -122,10 +123,31 @@ ul {
 /* ! Main content */
 /* Navbar del contatto */
 .contact-navbar {
-    height: 90px;
-    border: 2px dashed black;
+    background-color: #EAEAEA;
     flex-shrink: 0;
+    padding: 15px 0;
 }
+
+.contact-avatar-chat img {
+    height: 60px;
+}
+
+.contact-info-chat h2 {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.contact-info-chat .last-access {
+    margin-left: 20px;
+    color: gray;
+}
+
+.contact-chat-options a {
+    color: #B1B1B1;
+}
+
 
 /* Chat del contatto */
 .contact-chat {
