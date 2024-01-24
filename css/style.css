@@ -14,6 +14,7 @@
     display: flex;
 }
 
+/* ! Sidebar */
 .sidebar {
     width: 35%;
     height: 100%;
@@ -23,5 +24,11 @@
 .main-content {
     width: 65%;
     height: 100%;
+    border: 2px dashed black;
+}
+
+/* Navbar dell'utente */
+.user-navbar {
+    height: 90px;
     border: 2px dashed black;
 }
