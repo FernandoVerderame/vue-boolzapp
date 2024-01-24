@@ -17,8 +17,9 @@
 /* ! Sidebar */
 .sidebar {
     width: 35%;
-    height: 100%;
     border: 2px dashed black;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-content {
@@ -31,16 +32,30 @@
 .user-navbar {
     height: 90px;
     border: 2px dashed black;
+    flex-shrink: 0;
 }
 
 /* Notifiche messaggi */
 .user-notifications {
     height: 100px;
     border: 2px dashed black;
+    flex-shrink: 0;
 }
 
 /* Barra di ricerca */
 .search-bar {
     height: 60px;
     border: 2px dashed black;
+    flex-shrink: 0;
+}
+
+/* Lista contatti */
+.contacts-list {
+    overflow: auto;
+}
+
+.contact {
+    height: 100px;
+    border: 2px dashed black;
+    background-color: dodgerblue;
 }
