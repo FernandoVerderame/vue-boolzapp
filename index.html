@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,13 @@
     <title>Boolzapp</title>
 
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' integrity='sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'
+        integrity='sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=='
+        crossorigin='anonymous' />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -24,188 +28,123 @@
     <script defer src="js/script.js"></script>
 
 </head>
+
 <body>
-    <div class="bg-grad">
-        <div class="webapp-window">
+    <div id="root">
+        <div class="bg-grad">
+            <div class="webapp-window">
 
-            <!-- ! Sidebar -->
-            <div class="sidebar">
+                <!-- ! Sidebar -->
+                <div class="sidebar">
 
-                <!-- Navbar dell'utente -->
-                <div class="user-navbar">
-                    <div class="user-info d-flex">
-                        <div class="user-image">
-                            <img src="img/avatar_io.jpg" alt="user-img">
-                        </div>
-                        <div class="user-name">
-                            <h1>Nome Utente</h1>
-                        </div>
-                    </div>
-                    <div class="user-options">
-                        <ul class="d-flex gap-4 fs-3 me-4">
-                            <li><a href="#"><i class="fa-solid fa-circle-notch"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Sezione notifiche -->
-                <div class="user-notifications d-flex align-items-center gap-3">
-                    <div class="silence-icon">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-                    <div class="new-notifications">
-                        <h4>Ricevi notifiche di nuovi messaggi</h4>
-                        <div><a href="#">Attiva notifiche desktop</a></div>
-                    </div>
-                </div>
-
-                <!-- Barra di ricerca -->
-                <div class="search-bar">
-                    <div class="input-group mt-2 px-2">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
-                    </div>
-                </div>
-
-                <!-- Lista dei contatti -->
-                <div class="contacts-list">
-                    <div class="container">
-                        <div class="row list row-cols-1">
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_1.jpg" alt="Michele">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Michele</h3>
-                                    </div>
-                                </div>
+                    <!-- Navbar dell'utente -->
+                    <div class="user-navbar">
+                        <div class="user-info d-flex">
+                            <div class="user-image">
+                                <img :src="`img/avatar${data.user.avatar}.jpg`" :alt="data.user.name">
                             </div>
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_2.jpg" alt="Fabio">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Fabio</h3>
-                                    </div>
-                                </div>
-                            </div>                           
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_3.jpg" alt="Samuele">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Samuele</h3>
-                                    </div>
-                                </div>
-                            </div>                           
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_4.jpg" alt="Alessandro B.">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Alessandro B.</h3>
-                                    </div>
-                                </div>
-                            </div>                           
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_5.jpg" alt="Alessandro L.">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Alessandro L.</h3>
-                                    </div>
-                                </div>
-                            </div>                           
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_6.jpg" alt="Claudia">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Claudia</h3>
-                                    </div>
-                                </div>
-                            </div>                           
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_7.jpg" alt="Federico">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Federico</h3>
-                                    </div>
-                                </div>
-                            </div>                           
-                            <div class="col">
-                                <div class="contact d-flex">
-                                    <div class="contact-avatar">
-                                        <img src="img/avatar_8.jpg" alt="Davide">
-                                    </div>
-                                    <div class="contact-info">
-                                        <h3>Davide</h3>
-                                    </div>
-                                </div>
-                            </div>                           
-                           
+                            <div class="user-name">
+                                <h1>{{data.user.name}}</h1>
+                            </div>
+                        </div>
+                        <div class="user-options">
+                            <ul class="d-flex gap-4 fs-3 me-4">
+                                <li><a href="#"><i class="fa-solid fa-circle-notch"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                            </ul>
                         </div>
                     </div>
+
+                    <!-- Sezione notifiche -->
+                    <div class="user-notifications d-flex align-items-center gap-3">
+                        <div class="silence-icon">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div class="new-notifications">
+                            <h4>Ricevi notifiche di nuovi messaggi</h4>
+                            <div><a href="#">Attiva notifiche desktop</a></div>
+                        </div>
+                    </div>
+
+                    <!-- Barra di ricerca -->
+                    <div class="search-bar">
+                        <div class="input-group mt-2 px-2">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+
+                    <!-- Lista dei contatti -->
+                    <div class="contacts-list">
+                        <div class="container">
+                            <div class="row list row-cols-1">
+                                <div v-for="contact in contacts" class="col">
+                                    <div class="contact d-flex">
+                                        <div class="contact-avatar">
+                                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                                        </div>
+                                        <div class="contact-info">
+                                            <h3>{{contact.name}}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- Main content -->
+                <main class="main-content d-flex flex-column">
+
+                    <!-- Navbar del contatto -->
+                    <div class="contact-navbar d-flex justify-content-between align-items-center">
+                        <div class="contact-bar-chat d-flex">
+                            <div class="contact-avatar-chat ms-3">
+                                <img src="img/avatar_1.jpg" alt="Michele">
+                            </div>
+                            <div class="contact-info-chat">
+                                <h2>Michele</h2>
+                                <div class="last-access">Ultimo accesso oggi alle:</div>
+                            </div>
+                        </div>
+                        <div class="contact-chat-options">
+                            <ul class="d-flex gap-4 fs-3 me-4">
+                                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Chat del contatto -->
+                    <div class="contact-chat">
+                        <div class="container"></div>
+                    </div>
+
+                    <!-- Barra del messaggio -->
+                    <div class="message-bar d-flex align-items-center">
+                        <div>
+                            <a href="#"><i class="fa-regular fa-face-smile fs-2 ms-4"></i></a>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div>
+                            <a href="#"><i class="fa-solid fa-microphone fs-2 me-4"></i></a>
+                        </div>
+                    </div>
+                </main>
 
             </div>
-
-            <!-- Main content -->
-            <main class="main-content d-flex flex-column">
-
-                <!-- Navbar del contatto -->
-                <div class="contact-navbar d-flex justify-content-between align-items-center">
-                    <div class="contact-bar-chat d-flex">
-                        <div class="contact-avatar-chat ms-3">
-                            <img src="img/avatar_1.jpg" alt="Michele">
-                        </div>
-                        <div class="contact-info-chat">
-                            <h2>Michele</h2>
-                            <div class="last-access">Ultimo accesso oggi alle:</div>
-                        </div>
-                    </div>
-                    <div class="contact-chat-options">
-                        <ul class="d-flex gap-4 fs-3 me-4">
-                            <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
-                            <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Chat del contatto -->
-                <div class="contact-chat">
-                    <div class="container"></div>
-                </div>
-
-                <!-- Barra del messaggio -->
-                <div class="message-bar d-flex align-items-center">
-                    <div>
-                        <a href="#"><i class="fa-regular fa-face-smile fs-2 ms-4"></i></a>
-                    </div>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Scrivi un messaggio">
-                    </div>
-                    <div>
-                        <a href="#"><i class="fa-solid fa-microphone fs-2 me-4"></i></a>
-                    </div>
-                </div>
-            </main>
-
         </div>
     </div>
-    
+
 </body>
+
 </html>
