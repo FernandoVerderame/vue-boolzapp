@@ -14,3 +14,12 @@ due file JS con i dati da utilizzare.
 :avviso: Non potete modificare la struttura dei dati
 :orologio2: La scadenza per la consegna dell'esercizio è Venerdì 26 Gennaio ore 18:00
 Mi raccomando, fate tesoro di quanto appreso finora sulle modalità di approccio a questi esercizi e soprattutto...divertitevi!!
+
+
+
+##  SCALETTA
+1. MILESTONE 1: Replica della grafica & visualizzazione dinamica della lista contatti.
+2. MILESTONE 2: Visualizzazione dinamica dei messaggi & click sul contatto.
+3. MILESTONE 3: Aggiunta di un messaggio & risposta dall'interlocutore.
+4. MILESTONE 4: Ricerca utenti.
+5. MILESTONE 5 (bonus): Cancella messaggio & visualizzazione ora e ultimo messaggio inviato/ricevuto.
