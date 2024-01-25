@@ -63,7 +63,7 @@ ul {
     margin-left: 10px;
 }
 
-.user-options a {
+.user-options i {
     color: #B1B1B1;
 }
 
@@ -144,7 +144,7 @@ ul {
     color: gray;
 }
 
-.contact-chat-options a {
+.contact-chat-options i {
     color: #B1B1B1;
 }
 
@@ -162,7 +162,7 @@ ul {
     flex-shrink: 0;
 }
 
-.message-bar a {
+.message-bar i {
     color: gray;
 }
 
