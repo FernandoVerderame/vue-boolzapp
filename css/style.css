@@ -154,6 +154,36 @@ ul {
     background-image: url(/img/mine.jpg);
 }
 
+/* Messages */
+.message-container {
+    display: flex;
+}
+
+.message-container.sent {
+    justify-content: flex-end;
+}
+
+.message-container.received {
+    justify-content: flex-start;
+}
+
+.message-container.sent .message {
+    background-color: #D5F9BA;
+}
+
+.message-container.received .message {
+    background-color: white;
+}
+
+.message-container .message {
+    min-width: 300px;
+}
+
+.message .date {
+    font-size: 10px;
+    text-align: end;
+}
+
 /* Barra del messaggio */ 
 .message-bar {
     height: 90px;
