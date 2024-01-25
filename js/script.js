@@ -5,7 +5,8 @@ const app = createApp({
     data: () => ({
         user: data.user,
         contacts: data.contacts,
-        currentContact: 0
+        currentContact: 0,
+        newTextMessage: ''
     }),
 
     computed: {
@@ -17,6 +18,19 @@ const app = createApp({
     methods: {
         getCurrentContact(id) {
             this.currentContact = id;
+        },
+
+        addMessage() {
+            const newMessage = {
+                id: new Date().toISOString(),
+                date: new Date().toISOString(),
+                text: this.newTextMessage,
+                status: 'sent'
+            }
+
+            this.contacts[this.currentContact].messages.push(newMessage);
+
+            this.newTextMessage = '';
         }
     
     }
