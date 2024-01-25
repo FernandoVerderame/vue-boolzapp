@@ -81,7 +81,7 @@
                     <div class="contacts-list">
                         <div class="container">
                             <div class="row list row-cols-1">
-                                <div v-for="contact in contacts" :key="contact.id" class="col">
+                                <div role="button" v-for="contact in contacts" :key="contact.id" class="col" @click="currentContact">
                                     <div class="contact d-flex">
                                         <div class="contact-avatar">
                                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
@@ -90,9 +90,7 @@
                                             <h3>{{contact.name}}</h3>
                                         </div>
                                     </div>
-                                </div>
-                               
-
+                                </div>                               
                             </div>
                         </div>
                     </div>
@@ -106,10 +104,10 @@
                     <div class="contact-navbar d-flex justify-content-between align-items-center">
                         <div class="contact-bar-chat d-flex">
                             <div class="contact-avatar-chat ms-3">
-                                <img src="img/avatar_1.jpg" alt="Michele">
+                                <img :src="getAvatarUrl(currentContact)" alt="Michele">
                             </div>
                             <div class="contact-info-chat">
-                                <h2>Michele</h2>
+                                <h2>{{currentContact.name}}</h2>
                                 <div class="last-access">Ultimo accesso oggi alle:</div>
                             </div>
                         </div>
