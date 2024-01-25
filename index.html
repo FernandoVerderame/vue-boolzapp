@@ -41,7 +41,7 @@
                     <div class="user-navbar">
                         <div class="user-info d-flex">
                             <div class="user-image">
-                                <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
+                                <img :src="getAvatarUrl(user)" :alt="user.name">
                             </div>
                             <div class="user-name">
                                 <h1>{{user.name}}</h1>
@@ -84,7 +84,7 @@
                                 <div role="button" v-for="contact in contacts" :key="contact.id" class="col" @click="currentContact">
                                     <div class="contact d-flex">
                                         <div class="contact-avatar">
-                                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                                            <img :src="getAvatarUrl(contact)" :alt="contact.name">
                                         </div>
                                         <div class="contact-info">
                                             <h3>{{contact.name}}</h3>
