@@ -5,7 +5,7 @@ const app = createApp({
     data: () => ({
         user: data.user,
         contacts: data.contacts,
-        activeId: data.contacts.currentContact
+        currentContact: 0
     }),
 
     computed: {
@@ -15,10 +15,10 @@ const app = createApp({
     },
 
     methods: {
-        getAvatarUrl({avatar}) {
-            return `img/avatar${avatar}.jpg`
+        getCurrentContact(id) {
+            this.currentContact = id;
         }
-
+    
     }
 });
 
