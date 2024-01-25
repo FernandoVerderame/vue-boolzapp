@@ -81,7 +81,7 @@
                     <div class="contacts-list">
                         <div class="container">
                             <div class="row list row-cols-1">
-                                <div v-for="contact in contacts" class="col">
+                                <div v-for="contact in contacts" :key="contact.id" class="col">
                                     <div class="contact d-flex">
                                         <div class="contact-avatar">
                                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
