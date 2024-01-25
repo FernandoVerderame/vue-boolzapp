@@ -3,7 +3,7 @@ const {createApp} = Vue;
 const app = createApp({
     name: 'Boolzapp',
     data: () => ({
-        data,
+        user: data.user,
         contacts: data.contacts
     }),
 
