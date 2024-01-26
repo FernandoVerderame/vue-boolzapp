@@ -35,33 +35,28 @@ const app = createApp({
             this.currentId = id;
         },
         
-        addMessage() {
+        addMessage(status, text) {
             const newMessage = {
-                id: new Date().toISOString(),
-                date: new Date().toISOString(),
-                text: this.newTextMessage,
-                status: 'sent'
+                id: new Date().getTime(),
+                date: new Date().toLocaleTimeString(),
+                text,
+                status
             }
 
             this.currentChat.push(newMessage);
 
-            this.newTextMessage = '';
-
-            this.addReplayMessage();
         },
 
-        addReplayMessage() {
+        sendMessage() {
+            if (!this.newTextMessage) return ;
+
+            this.addMessage('sent', this.newTextMessage)
+
+            this.newTextMessage= '';
+
             setTimeout(() => {
-                const newReplayMessage = {
-                    id: new Date().toISOString(),
-                    date: new Date().toISOString(),
-                    text: 'ok',
-                    status: 'received'
-                }
-
-                this.currentChat.push(newReplayMessage);
-
-            }, 1000)
+                this.addMessage('received', 'ok')
+            }, 1000);
         }
     },
     
