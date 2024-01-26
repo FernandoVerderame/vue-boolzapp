@@ -73,7 +73,7 @@
                             <span class="input-group-text">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchContact">
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@
                     <div class="contacts-list">
                         <div class="container">
                             <div class="row list row-cols-1">
-                                <div role="button" v-for="(contact, id) in contacts" :key="contact.id" class="col" @click="getCurrentContact(id)">
+                                <div role="button" v-for="contact in contacts" :key="contact.id" class="col" @click="setCurrentId(contact.id)">
                                     <div class="contact d-flex">
                                         <div class="contact-avatar">
                                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
@@ -104,10 +104,10 @@
                     <div class="contact-navbar d-flex justify-content-between align-items-center">
                         <div class="contact-bar-chat d-flex">
                             <div class="contact-avatar-chat ms-3">
-                                <img :src="`img/avatar_${currentContact + 1}.jpg`" :alt="contacts[currentContact].name">
+                                <img :src="`img/avatar${currentContact.avatar}.jpg`" :alt="currentContact.name">
                             </div>
                             <div class="contact-info-chat">
-                                <h2>{{contacts[currentContact].name}}</h2>
+                                <h2>{{currentContact.name}}</h2>
                                 <div class="last-access">Ultimo accesso oggi alle:</div>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                     <!-- Chat del contatto -->
                     <div class="contact-chat d-flex flex-column">
                         <div class="px-3">
-                            <div v-for="message in contacts[currentContact].messages" class="message-container p-3" :class="message.status">
+                            <div v-for="message in currentChat" class="message-container p-3" :class="message.status">
                                 <div class="message p-2 rounded-3">
                                     <div class="text">{{message.text}}</div>
                                     <div class="date">{{message.date}}</div>

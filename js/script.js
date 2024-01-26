@@ -5,21 +5,36 @@ const app = createApp({
     data: () => ({
         user: data.user,
         contacts: data.contacts,
-        currentContact: 0,
-        newTextMessage: ''
+        currentId: null,
+        newTextMessage: '',
+        searchContact: ''
     }),
 
     computed: {
         currentContact() {
-        return  this.contacts.reduce((lowest, contact) => contact.id < lowest.id ? contact : lowest, this.contacts[0])
+            return this.contacts.find(contact => contact.id === this.currentId);
+        },
+
+        currentChat() {
+            return this.currentContact.messages;
+        },
+        /*
+        filteredContacts() {
+            const searchContact = this.searchContact.toLowerCase();
+
+            return this.contacts.filter(contact =>
+                contact.text.toLowerCase().includes(searchContact)
+            );
         }
+        */
     },
 
     methods: {
-        getCurrentContact(id) {
-            this.currentContact = id;
+        
+        setCurrentId(id) {
+            this.currentId = id;
         },
-
+        
         addMessage() {
             const newMessage = {
                 id: new Date().toISOString(),
@@ -28,12 +43,32 @@ const app = createApp({
                 status: 'sent'
             }
 
-            this.contacts[this.currentContact].messages.push(newMessage);
+            this.currentChat.push(newMessage);
 
             this.newTextMessage = '';
+
+            this.addReplayMessage();
+        },
+
+        addReplayMessage() {
+            setTimeout(() => {
+                const newReplayMessage = {
+                    id: new Date().toISOString(),
+                    date: new Date().toISOString(),
+                    text: 'ok',
+                    status: 'received'
+                }
+
+                this.currentChat.push(newReplayMessage);
+
+            }, 1000)
         }
+    },
     
+    created() {
+        this.currentId = this.contacts[0].id;
     }
+
 });
 
 app.mount('#root');
