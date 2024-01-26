@@ -18,15 +18,15 @@ const app = createApp({
         currentChat() {
             return this.currentContact.messages;
         },
-        /*
+        
         filteredContacts() {
-            const searchContact = this.searchContact.toLowerCase();
+            const searchTerm = this.searchContact.toLowerCase();
 
             return this.contacts.filter(contact =>
-                contact.text.toLowerCase().includes(searchContact)
+                contact.text.toLowerCase().includes(searchTerm)
             );
         }
-        */
+        
     },
 
     methods: {

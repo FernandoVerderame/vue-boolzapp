@@ -81,7 +81,7 @@
                     <div class="contacts-list">
                         <div class="container">
                             <div class="row list row-cols-1">
-                                <div role="button" v-for="contact in contacts" :key="contact.id" class="col" @click="setCurrentId(contact.id)">
+                                <div role="button" v-for="contact in filteredContacts" :key="contact.id" class="col" @click="setCurrentId(contact.id)">
                                     <div class="contact d-flex">
                                         <div class="contact-avatar">
                                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
