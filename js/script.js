@@ -23,7 +23,7 @@ const app = createApp({
             const searchTerm = this.searchContact.toLowerCase();
 
             return this.contacts.filter(contact =>
-                contact.text.toLowerCase().includes(searchTerm)
+                contact.name.toLowerCase().includes(searchTerm)
             );
         }
         
